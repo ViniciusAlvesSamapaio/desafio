@@ -78,7 +78,7 @@ Tabela2 = Tabela2.reset_index(drop=True)
 grouped = Tabela2.groupby('nome_dia').sum()
 
 # Reordena as linhas da tabela para começar na terça
-grouped = grouped.reindex(['Terca', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo', 'Segunda'])
+grouped = grouped.reindex(['Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo', 'Segunda'])
 
 grouped.drop(columns=['Dia da Semana'], inplace=True)
 
