@@ -26,7 +26,7 @@ from sklearn.model_selection import train_test_split
 
 #vai treinar a ia para que ela tente prever as vendas futuras 
 # estou separando os dados em dados de treino e dados de teste para garantir a funcionalidade da ia, cerca de 80% em treino e 20% em teste
-x_treino, x_teste, y_treino, y_teste = train_test_split(x, y, test_size=0.7) 
+x_treino, x_teste, y_treino, y_teste = train_test_split(x, y, test_size=0.8) 
 
 # esses são dois modelos de ia que usarei para o teste, o objetivo é uusar aquela que for mais precisa, então eu irei testar as duas 
 from sklearn.linear_model import LinearRegression 
@@ -55,7 +55,7 @@ print(tabela_a)
 sns.lineplot(data=tabela_a)
 plt.show()
 
-#estou usando isso para fazer a previsão dos proximos 5 dias solicitados no teste da vaga, infelizmente
+#estou usando isso para fazer a previsão dos proximos 5 dias solicitados no teste da vaga, 
 dias_5 = pd.date_range(start='20230120', periods=5, freq='D')
 dias_5df = pd.DataFrame(dias_5, columns=['Dia da Semana'])
 dias_5_predicao = modelo_arvore.predict(dias_5df)
